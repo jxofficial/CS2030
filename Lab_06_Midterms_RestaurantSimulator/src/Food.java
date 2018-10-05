@@ -1,12 +1,8 @@
-public class Food {
-    public String type;
-    public String desc; 
-    int price; 
-    public static int menuCount = 0;
-    public int id; 
+public abstract class Food extends MenuItem {
+    public String desc;
     
     public Food(String type, String desc, int price) {
-        this.type = type;
+        super(type);
         this.desc = desc;
         this.price = price;
     }

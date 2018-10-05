@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class OrderHandler {
-    ArrayList<Food> orderedMenu;
+    ArrayList<MenuItem> orderedMenu;
     private int price = 0;
-    ArrayList<Food> orders = new ArrayList<Food>();
+    ArrayList<MenuItem> orders = new ArrayList<MenuItem>();
 
 
-    public OrderHandler(ArrayList<Food> orderedMenu) {
+    public OrderHandler(ArrayList<MenuItem> orderedMenu) {
         this.orderedMenu = orderedMenu;
     }
 
@@ -17,19 +17,18 @@ public class OrderHandler {
                 return;
             }
         }
-
     }
 
     public void printOrders() {
         System.out.println("--- Order ---");
 
-        for (Food order : orders) {
+        for (MenuItem order : orders) {
             System.out.println(order);
-            price += order.price;
+            this.price += order.price;
         }
-        System.out.println("Total: " + price);
-    }
 
+        System.out.println("Total: " + this.price);
+    }
 
 
 }
