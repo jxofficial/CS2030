@@ -18,8 +18,8 @@ How to generate an infinite list?
 </ol>
 
 <p>generate method body:
-<br><U> IFL<U> generate(Supplier<U> s) {
-  return new IFL(s, () -> generate(s)); 
-}</p>
+   <U> IFL<U> generate(Supplier<U> s) {
+    <br>return new IFL(s, () -> generate(s)); 
+  }</p>
 
 
