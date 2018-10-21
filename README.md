@@ -1,9 +1,10 @@
 # CS2030
 AY18/19 Semester 1 CS2030 Programming Methodology II 
-</ hr>
+<hr />
 
 
 Lab 09 Infinite List.
+
 How to generate an infinite list? 
 
 //"s" are all individual supplier objects.
@@ -21,4 +22,4 @@ generate method body
   return new IFL(s, () -> generate(s)); 
 }
 
-  
+
