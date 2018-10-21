@@ -20,6 +20,6 @@ How to generate an infinite list?
 <p>generate method body:
    <U> IFL<U> generate(Supplier<U> s) {
     <br>  return new IFL(s, () -> generate(s)); 
-  }</p>
+  <br>}</p>
 
 
