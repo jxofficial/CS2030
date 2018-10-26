@@ -17,9 +17,11 @@ How to generate an infinite list?
   <li>ifl_3 is CREATED / SUPPLIED when s4.get() is called.</li>
 </ol>
 
-<p>generate method body:
-   <U> IFL<U> generate(Supplier<U> s) {
-    <br>  return new IFL(s, () -> generate(s)); 
-  <br>}</p>
+<p>
+  generate method body:
+  <br><U> IFL<U> generate(Supplier<U> s) {
+  <br>  return new IFL(s, () -> generate(s)); 
+  <br>}
+ </p>
 
 
