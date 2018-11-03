@@ -170,10 +170,10 @@ public class IFL<T> implements InfiniteList {
         lazyIFL.iflPredicate = Optional.of(predicate);
         lazyIFL.head = this.head;
 
-        if (predicate.test(head.get())) {
+        if ( predicate.test(head.get()) ){
             lazyIFL.tail = () -> this.tail.get().takeWhile(predicate);
         } else {
-            lazyIFL.tail = () -> new EmptyIFL<>();
+            lazyIFL = new EmptyIFL<>();
         }
 
         return lazyIFL;
@@ -187,9 +187,9 @@ public class IFL<T> implements InfiniteList {
         while ( !updatedIFL.isEmpty() ) {
             System.out.println(updatedIFL);
             if ( updatedIFL.isHeadFiltered() ) {
-                System.out.println("Before head " + updatedIFL.head.get());
+                System.out.println("head " + updatedIFL.head.get());
                 result = accumulator.apply(result, updatedIFL.head.get());
-                System.out.println("After applying result " + result );
+                System.out.println("result " + result );
             }
 
             new Scanner(System.in).nextLine();
@@ -200,9 +200,15 @@ public class IFL<T> implements InfiniteList {
     }
 
 
+    public Optional<T> reduce(BinaryOperator<T> accumulator) {
+
+        return Optional.empty();
+    }
+
     public static void main(String[] args) {
 
-        IFL.iterate(1, i -> i + 1).limit(3).reduce(0, (x, y) -> x + y);
+        IFL.iterate(1, i -> i + 1).limit(3).forEach(System.out::println);
+
 
 
 
