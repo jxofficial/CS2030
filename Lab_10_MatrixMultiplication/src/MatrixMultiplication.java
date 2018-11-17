@@ -5,7 +5,7 @@ class MatrixMultiplication extends RecursiveTask<Matrix> {
     /**
      * The fork threshold.
      */
-    private static final int FORK_THRESHOLD = 16;
+    private static final int FORK_THRESHOLD = 128;
 
     /**
      * The first matrix to multiply with.
